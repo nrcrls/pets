@@ -4,10 +4,14 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<p>Hi <span class="text-orange-500">{{ user.username }}!</span></p>
-<p><a href="{% url 'logout' %}">Log Out</a></p> {% else %}
-<p>You are not logged in</p>
-<a href="{% url 'login' %}">Log In</a> |
-<a href="{% url 'signup' %}">Sign Up</a>
+    <div class="relative inline-block text-sm lg:flex-grow">
+        <button id="dropdownButton" class="block mt-4 lg:inline-block lg:mt-0 mr-4">
+            Hi {{ user.username }}!
+        </button>
+    </div>
+{% else %}
+    <div class="block mt-4 lg:inline-block lg:mt-0">
+        <p>You are not logged in</p>
+    </div>
 {% endif %}
 {% endblock content %}

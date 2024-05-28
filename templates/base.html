@@ -9,9 +9,12 @@
     {% tailwind_css %}
 </head>
 <body>
+    {% include 'navbar.html' %}
     <main>
         {% block content %}
         {% endblock content %}
     </main>
+    
+    <script src="{% static 'js/dropdown.js' %}"></script>
 </body>
 </html>
