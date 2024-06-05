@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Clients{% endblock title %}
+
+{% block content %}
+<h1 class="font-bold m-5">Clients</h1>
+<div class="bg-white flex flex-wrap justify-center">
+    {% for client in client_list %}
+    <a href="{{ client.get_absolute_url }}">
+        <div class="shadow-md p-3 ml-4 rounded-lg dark:bg-gray-600 dark:text-gray-200">
+            <h1 class="text-xl sm:text-2xl font-semibold p-3">{{ client }}</h1>
+            <p class="text-sm sm:text-md md:text-lg font-medium px-3">Pet: Lorem ipsum pet name here</p>
+            <div class="mt-5">
+                <a href="#" class="text-xs sm:text-sm md:text-md font-medium pl-3">Edit</a>
+                <a href="#" class="text-xs sm:text-sm md:text-md font-medium">Delete</a>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock content %}

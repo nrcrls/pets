@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bg-white flex flex-wrap justify-center">
+    <div>
+        <h2>{{ object.first_name }} {{ object.last_name }}</h2>
+        <p>Daily rate: {{ object.daily_rate }}</p>
+    </div>
+</div>
+
+{% endblock content %}
