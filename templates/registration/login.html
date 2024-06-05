@@ -10,7 +10,7 @@
             {% csrf_token %}
             <h2 class="text-center mb-4 font-bold">Log In</h2>
             {{ form|crispy }}
-            <button type="submit" class="bg-yellow-400 text-white font-bold rounded-md p-2">Log In</button>
+            <button type="submit" class="mt-2 bg-yellow-400 text-white font-bold rounded-md p-2">Log In</button>
             <p class="mt-2 underline underline-offset-2"><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
         </form>
     </div>
