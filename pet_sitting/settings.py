@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "theme",
     "crispy_forms",
     "crispy_bootstrap5",
+    "widget_tweaks",
     "accounts",
     "pages",
     "clients",

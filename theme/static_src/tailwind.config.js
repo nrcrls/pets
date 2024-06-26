@@ -42,6 +42,15 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
+        colors: {
+            'dark': '#0A171A',
+            'dark-blue': '#112024',
+            'light-blue': '#DCEDEF',
+            'blue-primary': '#8FCCD6',
+            'blue-secondary': '#287681',
+            'blue-accent': '#3EB9CC',
+            'form-fields': '#243B3F',
+        },
         extend: {},
     },
     plugins: [
