@@ -1,16 +1,37 @@
 {% extends "base.html" %}
-{% load crispy_forms_tags %}
+{% load widget_tweaks %}
 
 {% block title %}Sign Up{% endblock title %}
 
 {% block content %}
-<div class="flex justify-center mt-5">
+<h1 class="text-blue-accent text-6xl pt-16 pb-10 ml-6 text-center">WanNyanApp</h1>
+<h2 class="text-light-blue text-3xl ml-8 text-center">The pet sitter's diary.</h2>
+<div class="flex justify-center mt-5 ml-4 h-[85vh] rounded-t-lg w-full">
     <div class="w-full max-w-xs">
-        <form method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form method="post" class="px-8 pt-16 pb-8">
             {% csrf_token %}
-            <h2 class="text-center mb-4 font-bold">Sign Up</h2>
-            {{ form|crispy }}
-            <button type="submit" class="bg-yellow-400 text-white font-bold rounded-md p-2">Sign Up</button>
+            {% if form.non_field_errors %}
+                <div class="mb-4">
+                    {% for error in form.non_field_errors %}
+                        <span class="text-alert">{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% for field in form %}
+                {% if field.errors %}
+                    <div class="mb-4">
+                        {% for error in field.errors %}
+                            <span class="text-alert">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <div class="mb-6">
+                    <label for="{{ field.id_for_label }}" class="sr-only">{{ field.label }}</label>
+                    {% render_field field class="form-control" placeholder=field.label %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn">Create an account</button>
+            <p class="mt-4 text-center text-light-blue">Already have an account? <a href="{% url 'password_reset' %}" class="text-blue-accent">Log in.</a></p>
         </form>
     </div>
 </div>

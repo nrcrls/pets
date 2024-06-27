@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .form-control {
+      @apply border-none rounded-sm bg-form-fields text-light-blue placeholder:uppercase placeholder:text-light-blue placeholder:text-center placeholder:tracking-widest w-full focus:ring-blue-accent;
+    }
+
+    .btn {
+        @apply w-full rounded-sm py-2 text-light-blue bg-blue-secondary hover:bg-blue-accent uppercase tracking-widest;
+    }
+  }

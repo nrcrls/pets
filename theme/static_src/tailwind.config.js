@@ -50,6 +50,7 @@ module.exports = {
             'blue-secondary': '#287681',
             'blue-accent': '#3EB9CC',
             'form-fields': '#243B3F',
+            'alert': '#9C2B2E',
         },
         extend: {},
     },
