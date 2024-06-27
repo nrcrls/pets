@@ -3,11 +3,35 @@
 @tailwind utilities;
 
 @layer components {
+    .title {
+        @apply text-blue-accent text-6xl pt-16 pb-10 ml-6 text-center;
+    }
+
+    .subtitle {
+        @apply text-light-blue text-2xl ml-8 text-center;
+    }
+
+    .form-wrapper {
+        @apply flex justify-center mt-5 ml-4 h-[85vh] rounded-t-lg w-full;
+    }
+
+    .form-padding {
+        @apply px-8 pt-16 pb-8;
+    }
+
+    .input-length {
+        @apply w-full max-w-xs;
+    }
+
     .form-control {
-      @apply border-none rounded-sm bg-form-fields text-light-blue placeholder:uppercase placeholder:text-light-blue placeholder:text-center placeholder:tracking-widest w-full focus:ring-blue-accent;
+        @apply border-none rounded-sm bg-form-fields text-light-blue placeholder:uppercase placeholder:text-light-blue placeholder:text-center placeholder:tracking-widest w-full focus:ring-blue-accent;
     }
 
     .btn {
         @apply w-full rounded-sm py-2 text-light-blue bg-blue-secondary hover:bg-blue-accent uppercase tracking-widest;
+    }
+
+    .link {
+        @apply mt-4 text-center text-light-blue hover:text-blue-accent;
     }
   }

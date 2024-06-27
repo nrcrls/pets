@@ -4,11 +4,11 @@
 {% block title %}Sign Up{% endblock title %}
 
 {% block content %}
-<h1 class="text-blue-accent text-6xl pt-16 pb-10 ml-6 text-center">WanNyanApp</h1>
-<h2 class="text-light-blue text-3xl ml-8 text-center">The pet sitter's diary.</h2>
-<div class="flex justify-center mt-5 ml-4 h-[85vh] rounded-t-lg w-full">
-    <div class="w-full max-w-xs">
-        <form method="post" class="px-8 pt-16 pb-8">
+<h1 class="title">WanNyanApp</h1>
+<h2 class="subtitle">The pet sitter's diary</h2>
+<div class="form-wrapper">
+    <div class="input-length">
+        <form method="post" class="form-padding">
             {% csrf_token %}
             {% if form.non_field_errors %}
                 <div class="mb-4">

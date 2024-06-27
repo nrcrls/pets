@@ -4,26 +4,26 @@
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
-<h1 class="text-blue-accent text-6xl pt-16 pb-10 ml-6 text-center">WanNyanApp</h1>
-<h2 class="text-light-blue text-3xl ml-8 text-center">The pet sitter's diary.</h2>
-<div class="flex justify-center mt-5 ml-4 h-[85vh] rounded-t-lg w-full">
-    <div class="w-full max-w-xs">
-        <form method="post" class="px-8 pt-16 pb-8">
+<h1 class="title">WanNyanApp</h1>
+<h2 class="subtitle">Log in to access your diary</h2>
+<div class="form-wrapper">
+    <div class="input-length">
+        <form method="post" class="form-padding">
             {% csrf_token %}
             <div class="mb-4">
                 <label class="sr-only" for="{{ form.username.id_for_label }}">
                     Username
                 </label>
-                {% render_field form.username class="border-none rounded-sm bg-form-fields text-light-blue placeholder:uppercase placeholder:text-light-blue placeholder:text-center placeholder:tracking-widest w-full focus:ring-blue-accent" placeholder="Username" %}
+                {% render_field form.username class="form-control" placeholder="Username" %}
             </div>
             <div class="mb-6">
                 <label class="sr-only" for="{{ form.password.id_for_label }}">
                     Password
                 </label>
-                {% render_field form.password class="border-none rounded-sm bg-form-fields text-light-blue placeholder:uppercase placeholder:text-light-blue placeholder:text-center placeholder:tracking-widest w-full focus:ring-blue-accent my-4" placeholder="Password" %}
+                {% render_field form.password class="form-control my-4" placeholder="Password" %}
             </div>
-            <button type="submit" class="w-full rounded-sm py-2 text-light-blue bg-blue-secondary hover:bg-blue-accent uppercase tracking-widest">Log In</button>
-            <p class="mt-4 text-center text-light-blue hover:text-blue-accent"><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+            <button type="submit" class="btn">Log In</button>
+            <p class="link"><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
         </form>
     </div>
 </div>
