@@ -3,19 +3,36 @@
 {% block title %}Clients{% endblock title %}
 
 {% block content %}
-<h1 class="font-bold m-5">Clients</h1>
-<div class="bg-white flex flex-wrap justify-center">
-    {% for client in client_list %}
-    <a href="{{ client.get_absolute_url }}">
-        <div class="shadow-md p-3 ml-4 rounded-lg dark:bg-gray-600 dark:text-gray-200">
-            <h1 class="text-xl sm:text-2xl font-semibold p-3">{{ client }}</h1>
-            <p class="text-sm sm:text-md md:text-lg font-medium px-3">Pet: Lorem ipsum pet name here</p>
-            <div class="mt-5">
-                <a href="#" class="text-xs sm:text-sm md:text-md font-medium pl-3">Edit</a>
-                <a href="#" class="text-xs sm:text-sm md:text-md font-medium">Delete</a>
+<div class="container mx-auto p-5">
+    <div class="grid grid-flow-row md:grid-flow-col md:grid-cols-3 mt-10">
+        <!-- Left Column for Links -->
+        <div class="md:col-span-1">
+            <h1 class="p-3 mb-2 md:p-1 md:mb-5 text-6xl font-bold text-blue-accent">Clients</h1>
+            <div class="flex flex-row mb-4 ml-1 md:ml-0 md:flex-col">
+                <a href="{% url 'home' %}" class="side-menu">Home</a>
+                <a href="#" class="side-menu">Add New Client</a>
             </div>
         </div>
-    </a>
-    {% endfor %}
+        
+        <!-- Right Column for Client List -->
+        <div class="col-span-2">
+            <div class="grid md:grid-cols-2 gap-4 md:mt-24">
+                {% for client in client_list %}
+                    <div class="md:col-span-1">
+                        <a href="{{ client.get_absolute_url }}">
+                            <div class="mx-4 md:mx-0 p-3 rounded-lg bg-blue-primary">
+                                <h1 class="text-xl sm:text-2xl font-semibold p-3">{{ client }}</h1>
+                                <p class="text-sm sm:text-md md:text-lg font-medium px-3 text-blue-secondary"><span class="font-semibold">Pet:</span> Lorem ipsum pet name here</p>
+                                <div class="mt-5">
+                                    <a href="#" class="card-link pl-3">Edit</a>
+                                    <a href="#" class="card-link">Delete</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}

@@ -53,4 +53,12 @@ select:-webkit-autofill:focus {
     .link {
         @apply mt-4 text-center text-light-blue hover:text-blue-accent;
     }
-  }
+
+    .card-link {
+        @apply text-xs sm:text-sm md:text-base font-medium;
+    }
+
+    .side-menu {
+        @apply block p-3 text-light-blue hover:text-blue-secondary;
+    }
+}
